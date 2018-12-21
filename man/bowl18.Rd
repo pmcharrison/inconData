@@ -9,6 +9,8 @@ This dataset comes from the supplementary materials of
 \insertCite{Bowling2018;textual}{inconData}.
 }
 \details{
+The dataset is represented as a \link[tibble:tibble-package]{tibble}
+with the following columns:
 \itemize{
 \item \code{id}: Unique ID for each chord.
 \item \code{name}: Chord name (only present for some chords).
@@ -21,9 +23,8 @@ where high ratings indicated high consonance.
 \item \code{fr_chord}: Vector of chord frequencies.
 \item \code{pi_chord}: Vector of chord pitches, on MIDI note scale.
 \item \code{pi_chord_int}: An integer approximation of \code{pi_chord}.
-\item \code{pc_chord_int}:
-An integer approximation of the chord's pitch-class set,
-expressed relative to the chord's bass note.
+\item \code{pi_chord_type_int}:
+\code{pi_chord_int} but expressed relative to the chord's bass note.
 }
 }
 \references{

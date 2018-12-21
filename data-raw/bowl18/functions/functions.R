@@ -15,7 +15,7 @@ process_csv <- function(chord_size, file) {
   initialise_dat(chord_size, file) %>%
     add_representations(chord_size) %>%
     select(id, name, chord_size, rating_mean, rating_sd, rating_se,
-           fr_chord, pi_chord, pi_chord_int, pc_chord_int)
+           fr_chord, pi_chord, pi_chord_int, pi_chord_type_int)
 }
 
 initialise_dat <- function(chord_size, file) {
@@ -31,30 +31,31 @@ initialise_dat <- function(chord_size, file) {
 add_representations <- function(dat, chord_size) {
   dat %>%
     add_fr_chord(chord_size) %>%
-    add_pc_chord_int(chord_size) %>%
+    add_pi_chord_type_int(chord_size) %>%
     mutate(
       pi_chord = fr_chord %>% map(hrep::pi_chord),
-      pi_chord_int = map2(fr_chord, pc_chord_int, get_pi_chord_int)
+      pi_chord_int = map2(fr_chord, pi_chord_type_int, get_pi_chord_int)
     )
 }
 
 add_fr_chord <- function(dat, chord_size) {
   cols <- get_cols("f", chord_size)
-  dat$fr_chord <- merge_columns(dat[, cols])
+  dat$fr_chord <- merge_columns(dat[, cols]) %>% purrr::map(hrep::fr_chord)
   dat
 }
 
-add_pc_chord_int <- function(dat, chord_size) {
+add_pi_chord_type_int <- function(dat, chord_size) {
   cols <- get_cols("pc", chord_size)
-  dat$pc_chord_int <- merge_columns(dat[, cols])
+  dat$pi_chord_type_int <- merge_columns(dat[, cols]) %>%
+    purrr::map(hrep::pi_chord_type)
   dat
 }
 
-get_pi_chord_int <- function(fr_chord, pc_chord_int) {
+get_pi_chord_int <- function(fr_chord, pi_chord_type_int) {
   n <- length(fr_chord)
   res <- integer(n)
   res[1] <- fr_chord[1] %>% hrep::freq_to_midi() %>% round()
-  for (i in 2:n) res[i] <- res[1] + pc_chord_int[i]
+  for (i in 2:n) res[i] <- res[1] + pi_chord_type_int[i]
   hrep::pi_chord(res)
 }
 
