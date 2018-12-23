@@ -25,7 +25,7 @@
 #' improves the way that chord objects are displayed.
 #'
 #' @references \insertAllCited
-#' @name schwartz2003
+#' @name sch03
 #' @md
 #' @docType data
 #' @keywords data
