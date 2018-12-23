@@ -22,6 +22,18 @@
 #' * \code{pi_chord_int}: An integer approximation of \code{pi_chord}.
 #' * \code{pi_chord_type_int}:
 #' \code{pi_chord_int} but expressed relative to the chord's bass note.
+#' * \code{tuning_tonic_pc}:
+#' The tonic pitch-class used for defining the just intonation
+#' with which \code{fr_chord} and \code{pi_chord} are expressed.
+#' * \code{tuning_tonic_pc_int}:
+#' \code{tuning_tonic_pc} but expressed on the same integer scale
+#' as \code{pi_chord_int}.
+#'
+#' @note
+#' The table uses representations from the \code{hrep} package.
+#' Loading the \code{hrep} package (\code{library(hrep)}
+#' improves the way that chord objects are displayed.
+#'
 #' @references \insertAllCited
 #' @name bowl18
 #' @md
@@ -30,7 +42,4 @@
 NULL
 
 #' @importFrom tibble tibble
-NULL
-
-#' @importFrom hrep print.pi_chord_type
 NULL

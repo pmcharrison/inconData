@@ -11,7 +11,8 @@ RdMacros: Rdpack
 Imports: 
     hrep,
     Rdpack,
-    tibble
+    tibble,
+    checkmate
 Suggests:
     usethis,
     dplyr,

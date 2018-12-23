@@ -14,8 +14,17 @@ process_csv <- function(chord_size, file) {
   message("Processing ", file, "...")
   initialise_dat(chord_size, file) %>%
     add_representations(chord_size) %>%
+    coerce() %>%
     select(id, name, chord_size, rating_mean, rating_sd, rating_se,
-           fr_chord, pi_chord, pi_chord_int, pi_chord_type_int)
+           fr_chord, pi_chord, pi_chord_int, pi_chord_type_int,
+           tuning_tonic_pc,
+           tuning_tonic_pc_int)
+}
+
+coerce <- function(x) {
+  checkmate::qassert(x$tuning_tonic_pc_int, "X")
+  mutate(x,
+         tuning_tonic_pc_int = as.integer(tuning_tonic_pc_int))
 }
 
 initialise_dat <- function(chord_size, file) {
@@ -34,7 +43,9 @@ add_representations <- function(dat, chord_size) {
     add_pi_chord_type_int(chord_size) %>%
     mutate(
       pi_chord = fr_chord %>% map(hrep::pi_chord),
-      pi_chord_int = map2(fr_chord, pi_chord_type_int, get_pi_chord_int)
+      pi_chord_int = map2(fr_chord, pi_chord_type_int, get_pi_chord_int),
+      tuning_tonic_pc = map_dbl(pi_chord, hrep::get_bass_pc),
+      tuning_tonic_pc_int = map_dbl(pi_chord_int, hrep::get_bass_pc)
     )
 }
 
