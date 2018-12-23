@@ -15,7 +15,8 @@ process_csv <- function(chord_size, file) {
   initialise_dat(chord_size, file) %>%
     add_representations(chord_size) %>%
     coerce() %>%
-    select(id, name, chord_size, rating_mean, rating_sd, rating_se,
+    rename(rating = rating_mean) %>%
+    select(id, name, chord_size, rating, rating_sd, rating_se,
            fr_chord, pi_chord, pi_chord_int, pi_chord_type_int,
            tuning_tonic_pc,
            tuning_tonic_pc_int)
@@ -72,47 +73,6 @@ get_pi_chord_int <- function(fr_chord, pi_chord_type_int) {
 
 get_cols <- function(prefix, chord_size) {
   paste(prefix, seq_len(chord_size), sep = "_")
-}
-
-document_csv <- function(dat) {
-  attr(dat$name, "label") <- "Name"
-  attr(dat$name, "shortDescription") <-
-    "English name for chord, after Bowling et al. (2018)"
-
-  attr(dat$rating_rank, "label") <- "Perceptual consonance (ranked)"
-  attr(dat$rating_rank, "shortDescription") <- paste(
-    "Ranks are given compared to other chords with the same number of notes.",
-    "Low numbers indicate highest consonance.",
-    "Data collected in Bowling et al. (2018).")
-
-  attr(dat$rating_mean, "label") <- "Perceptual consonance rating (mean)"
-  attr(dat$rating_mean, "shortDescription") <- paste(
-    "Ratings are on a four-point scale.",
-    "High rating indicates high consonance.",
-    "Data collected in Bowling et al. (2018).")
-
-  attr(dat$rating_sd, "label") <- "Perceptual consonance rating (SD)"
-  attr(dat$rating_sd, "shortDescription") <- paste(
-    "Standard deviation for perceptual consonance ratings as reported in",
-    "the column 'rating_mean'.",
-    "Data collected in Bowling et al. (2018).")
-
-  attr(dat$rating_se, "label") <- "Perceptual consonance rating (SE)"
-  attr(dat$rating_se, "shortDescription") <- paste(
-    "Standard error for perceptual consonance ratings as reported in",
-    "the column 'rating_mean'.",
-    "Data collected in Bowling et al. (2018).")
-
-  # attr(dat$bowling_harm_sim, "label") <- "Harmonic similarity (Bowling)"
-  # attr(dat$bowling_harm_sim, "shortDescription") <- paste(
-  #   "Similarity to a harmonic series, as computed by Bowling et al. (2018).")
-  #
-  # attr(dat$bowling_min_freq_int, "label") <- "Min. frequency interval (Hz) (Bowling)"
-  # attr(dat$bowling_min_freq_int, "shortDescription") <- paste(
-  #   "Minimum frequency interval in the chord (Hz),",
-  #   "as computed by Bowling et al. (2018).")
-
-  dat
 }
 
 sanitise_dat <- function(dat) {

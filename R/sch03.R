@@ -15,7 +15,7 @@
 #' Vector of chord pitches, each expressed relative to the bass pitch.
 #' Uses the \code{\link[hrep]{pi_chord_type}} representation from the
 #' \code{hrep} package.
-#' * \code{consonance_rank}:
+#' * \code{rating}:
 #' Ordinal consonance ranking with respect to the other intervals in the dataset.
 #' Lower values indicate greater consonance.
 #'

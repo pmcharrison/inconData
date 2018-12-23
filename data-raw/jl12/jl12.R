@@ -4,7 +4,7 @@ library(hrep)
 f <- function(file) {
   read_csv(file, col_types = cols()) %>%
     mutate(pi_chord = strsplit(midi, " ") %>% map(as.integer) %>% map(pi_chord)) %>%
-    rename(perceptual_dissonance = mean_rating) %>%
+    rename(rating = mean_rating) %>%
     select(- midi)
 }
 

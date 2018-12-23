@@ -15,7 +15,7 @@ with the following columns:
 \item \code{id}: Unique ID for each chord.
 \item \code{name}: Chord name (only present for some chords).
 \item \code{chord_size}: Number of chord tones.
-\item \code{rating_mean}:
+\item \code{rating}:
 Mean consonance rating. Ratings were on a four-point scale,
 where high ratings indicated high consonance.
 \item \code{rating_sd}: Standard deviation of consonance ratings.

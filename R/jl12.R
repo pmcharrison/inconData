@@ -14,7 +14,7 @@
 #' with the following columns:
 #'
 #' * \code{id}: Unique chord identifer.
-#' * \code{perceptual_dissonance}: Mean perceptual dissonance rating.
+#' * \code{rating}: Mean perceptual dissonance rating.
 #' * \code{roughness_model}:
 #' These are estimates of roughness made by
 #' \insertCite{Johnson-Laird2012;textual}{inconData}

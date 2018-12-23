@@ -14,10 +14,10 @@ with the following columns:
 \itemize{
 \item \code{label}: Chord label.
 \item \code{num_ratings}: Number of times that the chord was rated.
-\item \code{consonance_rating_mean}: Mean consonance rating.
+\item \code{rating}: Mean consonance rating.
 Higher values indicate higher consonance.
-\item \code{consonance_rating_sd}: Standard deviation of consonance ratings.
-\item \code{consonance_rating_se}: Standard error of the
+\item \code{rating_sd}: Standard deviation of consonance ratings.
+\item \code{rating_se}: Standard error of the
 mean consonance rating, computed under the central limit theorem.
 \item \code{pi_chord_type}
 Vector of chord pitches, each expressed relative to the bass pitch.

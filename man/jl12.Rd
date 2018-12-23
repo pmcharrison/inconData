@@ -23,7 +23,7 @@ Each dataset is represented as a \link[tibble:tibble-package]{tibble}
 with the following columns:
 \itemize{
 \item \code{id}: Unique chord identifer.
-\item \code{perceptual_dissonance}: Mean perceptual dissonance rating.
+\item \code{rating}: Mean perceptual dissonance rating.
 \item \code{roughness_model}:
 These are estimates of roughness made by
 \insertCite{Johnson-Laird2012;textual}{inconData}

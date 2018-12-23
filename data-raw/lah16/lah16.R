@@ -23,17 +23,17 @@ lah16 <- "data-raw/lah16/chord_data.tab" %>%
   read_delim("\t", col_types = cols()) %>%
   group_by(chord, inversion) %>%
   summarise(num_ratings = n(),
-            consonance_rating_mean = mean(consonance),
-            consonance_rating_sd = sd(consonance),
-            consonance_rating_se = consonance_rating_sd / sqrt(n())) %>%
+            rating = mean(consonance),
+            rating_sd = sd(consonance),
+            rating_se = rating_sd / sqrt(n())) %>%
   ungroup() %>%
-  rename(label = chord) %>%
+  rename(id = chord) %>%
   mutate(
     inversion = if_else(is.na(inversion),
                         "",
                         recode(inversion, Fifth = "C", Root = "A", Third = "B")),
-    label = paste(label, inversion, sep = ""),
-    pi_chord_type = map(label, ~ chord_types[[.]])
+    id = paste(id, inversion, sep = ""),
+    pi_chord_type = map(id, ~ chord_types[[.]])
   ) %>%
   select(- inversion)
 

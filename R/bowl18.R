@@ -9,7 +9,7 @@
 #' * \code{id}: Unique ID for each chord.
 #' * \code{name}: Chord name (only present for some chords).
 #' * \code{chord_size}: Number of chord tones.
-#' * \code{rating_mean}:
+#' * \code{rating}:
 #' Mean consonance rating. Ratings were on a four-point scale,
 #' where high ratings indicated high consonance.
 #' * \code{rating_sd}: Standard deviation of consonance ratings.

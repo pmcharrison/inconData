@@ -8,10 +8,10 @@
 #'
 #' * \code{label}: Chord label.
 #' * \code{num_ratings}: Number of times that the chord was rated.
-#' * \code{consonance_rating_mean}: Mean consonance rating.
+#' * \code{rating}: Mean consonance rating.
 #' Higher values indicate higher consonance.
-#' * \code{consonance_rating_sd}: Standard deviation of consonance ratings.
-#' * \code{consonance_rating_se}: Standard error of the
+#' * \code{rating_sd}: Standard deviation of consonance ratings.
+#' * \code{rating_se}: Standard error of the
 #' mean consonance rating, computed under the central limit theorem.
 #' * \code{pi_chord_type}
 #' Vector of chord pitches, each expressed relative to the bass pitch.
