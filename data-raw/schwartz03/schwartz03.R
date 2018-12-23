@@ -2,7 +2,7 @@ library(tidyverse)
 library(hrep)
 library(usethis)
 
-schwartz2003 <- read_delim("data-raw/schwartz2003/figure-6.txt", delim = "\t") %>%
+schwartz03 <- read_delim("data-raw/schwartz03/figure-6.txt", delim = "\t") %>%
   mutate(pi_chord_type = interval %>%
            strsplit(" ") %>% map(as.integer) %>% map(pi_chord_type)) %>%
   transmute(name = label,
@@ -10,4 +10,4 @@ schwartz2003 <- read_delim("data-raw/schwartz2003/figure-6.txt", delim = "\t") %
             chord_size = 2L,
             consonance_rank = consonance_rank)
 
-use_data(schwartz2003, overwrite = TRUE)
+use_data(schwartz03, overwrite = TRUE)
