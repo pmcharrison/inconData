@@ -17,7 +17,7 @@ chord_types <- list(
   MinorC = c(0, 5, 8),
   `Neap.` = c(0, 1, 4, 6, 9),
   `Pent.` = c(0, 2, 4, 7, 9)
-)
+) %>% map(as.integer) %>% map(pi_chord_type)
 
 lah16 <- "data-raw/lah16/chord_data.tab" %>%
   read_delim("\t", col_types = cols()) %>%
