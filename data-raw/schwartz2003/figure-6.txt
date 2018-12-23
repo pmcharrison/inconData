@@ -1,0 +1,13 @@
+label	interval	consonance_rank
+octave	0 12	2
+fifth	0 7	3
+fourth	0 5	4
+major third	0 4	5
+major sixth	0 9	5
+minor sixth	0 8	6
+minor third	0 3	7
+tritone	0 6	8
+minor seventh	0 10	9
+major second	0 2	9
+major seventh	0 11	11
+minor second	0 1	12
