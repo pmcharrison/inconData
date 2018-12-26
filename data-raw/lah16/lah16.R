@@ -33,7 +33,8 @@ lah16 <- "data-raw/lah16/chord_data.tab" %>%
                         "",
                         recode(inversion, Fifth = "C", Root = "A", Third = "B")),
     id = paste(id, inversion, sep = ""),
-    pi_chord_type = map(id, ~ chord_types[[.]])
+    pi_chord_type = map(id, ~ chord_types[[.]]),
+    pi_chord = map(pi_chord_type, ~ pi_chord(as.integer(.) + 67L))
   ) %>%
   select(- inversion)
 
