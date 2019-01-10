@@ -29,11 +29,11 @@
 #' Here, we give the bass note of each chord a value of 67,
 #' working from the following passage in
 #' \insertCite{Lahdelma2016;textual}{inconData}:
-#' All selected chords were transposed with a randomization across two octaves
+#' "All selected chords were transposed with a randomization across two octaves
 #' (+/- 5 semitones around C4 and C5, the possible chord roots being all
-#' equally likely to occur within this range).
-#' In other words, we selected G4 as the common bass/root note,
-#' being the middle of this randomisation range.
+#' equally likely to occur within this range)."
+#' We therefore selected G4/67 as the common bass/root note,
+#' it being the middle of this randomisation range.
 #' @note
 #' In the original experiment, chords were played at a variety of transpositions.
 #' Unfortunately, insufficient information is provided in the supplementary data
