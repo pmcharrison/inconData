@@ -1,0 +1,48 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+library(dplyr)
+library(knitr)
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# inconData - Datasets for instantaneous consonance perception
+
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+
+This package compiles several empirical datasets for experiments on instantaneous consonance perception.
+
+## Installation
+
+You can install the current version of `inconData` from Github
+by entering the following commands into R:
+
+``` r
+if (!require(devtools)) install.packages("devtools")
+devtools::install_github("inconData")
+```
+
+## Datasets
+
+Currently the following datasets are included:
+
+```{r, echo = FALSE}
+library(inconData)
+incon_datasets() %>% 
+  rename(Label = label,
+         Description = description) %>% 
+  kable()
+```
+
+
+See the inbuilt package documentation (e.g. `jl12a`)
+for details of the specific datasets.
