@@ -4,9 +4,9 @@
 \name{inconData-package}
 \alias{inconData}
 \alias{inconData-package}
-\title{inconData: Datasets for Instantaneous Consonance Perception}
+\title{inconData: Datasets for Simultaneous Consonance Perception}
 \description{
-This package compiles several empirical datasets for experiments on instantaneous consonance perception.
+This package compiles several empirical datasets for experiments on simultaneous consonance perception.
 }
 \author{
 \strong{Maintainer}: Peter Harrison \email{pmc.harrison@gmail.com}

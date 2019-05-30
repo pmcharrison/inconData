@@ -1,13 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# inconData - Datasets for instantaneous consonance perception
+# inconData - Datasets for simultaneous consonance perception
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2545785.svg)](https://doi.org/10.5281/zenodo.2545785)
 
 This package compiles several empirical datasets for experiments on
-instantaneous consonance perception.
+simultaneous consonance perception.
 
 ## Installation
 

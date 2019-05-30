@@ -1,8 +1,8 @@
 Package: inconData
-Title: Datasets for Instantaneous Consonance Perception
+Title: Datasets for Simultaneous Consonance Perception
 Version: 0.1.0
 Authors@R: person("Peter", "Harrison", email = "pmc.harrison@gmail.com", role = c("aut", "cre"))
-Description: This package compiles several empirical datasets for experiments on instantaneous consonance perception.
+Description: This package compiles several empirical datasets for experiments on simultaneous consonance perception.
 Depends: R (>= 3.4.0)
 License: CC0
 Encoding: UTF-8
@@ -20,4 +20,4 @@ Suggests:
     readr
 Remotes:
     pmcharrison/hrep
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1

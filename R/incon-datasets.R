@@ -1,4 +1,4 @@
-#' Instantaneous consonance datasets
+#' Simultaneous consonance datasets
 #'
 #' This \code{\link[tibble]{tibble}} summarises the
 #' consonance perception datasets available in the \code{inconData} package.

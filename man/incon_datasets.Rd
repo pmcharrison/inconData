@@ -3,7 +3,7 @@
 \docType{data}
 \name{incon_datasets}
 \alias{incon_datasets}
-\title{Instantaneous consonance datasets}
+\title{Simultaneous consonance datasets}
 \usage{
 incon_datasets()
 }
